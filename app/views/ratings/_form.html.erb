@@ -1,0 +1,9 @@
+<%= form_for rating, url: url, method: method do |f| %>
+  <% (1..5).to_a.each do |number| %>
+    <%= f.radio_button(:stars, number) %>
+    <%= f.label(number) %>
+  <% end %>
+  <%= f.hidden_field(:franchise_id, value: rating.franchise_id) %>
+  <%= f.hidden_field(:user_id, value: rating.user_id) %>
+  <%= f.submit %>
+<% end %>

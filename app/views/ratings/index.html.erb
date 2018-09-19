@@ -1,0 +1,6 @@
+<h2><%= @franchise.name %></h2>
+<ol>
+<% @ratings.each do |r| %>
+  <li><%= r.user.name %> - <%= r.stars %> stars</li>
+<% end %>
+</ol>

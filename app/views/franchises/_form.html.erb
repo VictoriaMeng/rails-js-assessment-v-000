@@ -1,0 +1,11 @@
+<%= form_for franchise, url: url, method: method do |f| %>
+  <%= f.label "Name" %>
+  <%= f.text_field :name %>
+  <%= f.label "Medium" %>
+  <%= f.select(:medium) do %>
+    <% Franchise.mediums.each do |m| %>
+      <%= content_tag(:option, m[0], value: m[1]) %>
+    <% end %>
+  <% end %>
+  <%= f.submit %>
+<% end %>

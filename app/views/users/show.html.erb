@@ -1,0 +1,8 @@
+<h2>Hello, <%= @user.name %>!</h2>
+<h3>Your Ratings:</h3>
+<p><%= render partial: "franchises/sort", locals: {url: "/users/sort" } %></p>
+<ol>
+<% @ratings.each do |rating| %>
+  <li><%= display_listed_rating(rating) %></li>
+<% end %>
+</ol>

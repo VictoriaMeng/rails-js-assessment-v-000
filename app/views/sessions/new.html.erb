@@ -1,0 +1,4 @@
+<h2>Login</h2>
+
+<%= render partial: "users/form", locals: {user: @user, url: "/login", method: "post"} %>
+<p><%= link_to('Log in with Facebook!', '/auth/facebook') %></p>

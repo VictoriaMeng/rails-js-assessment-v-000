@@ -1,0 +1,2 @@
+<h2>Your Rating:</h2>
+<%= render partial: "form", locals: {rating: @rating, url: franchise_ratings_path(params[:franchise_id]), method: "post"} %>

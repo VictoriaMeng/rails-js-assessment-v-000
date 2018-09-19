@@ -1,11 +1,8 @@
 tags:
-  - rails
-  - json
-  - js
-  - jQuery
-  - assessment
+  - tag_1
+  - tag_2
 languages:
-  - ruby
-  - javascript
+  - language_1
+  - language_1
 resources: 0
 live_assessment: true

@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AppReview</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>RateYourFav</title>
+    <h1>Rate Your Fav</h1>
+    <nav>
+      <% if logged_in? %>
+        <%= display_user_page_link %>
+        <%= display_franchise_index_link %>
+        <%= display_new_franchise_link %>
+        <%= display_logout_link %>
+      <% end %>
+    </nav>
   </head>
 
   <body>
+    <br>
+    <%= display_errors(@user) %>
+    <%= display_errors(@franchise) %>
+    <%= display_errors(@rating) %>
+    <%= display_flash_errors %>
+    <br>
     <%= yield %>
   </body>
 </html>
