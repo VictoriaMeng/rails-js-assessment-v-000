@@ -16,6 +16,6 @@ module FranchiseHelper
   end
 
   def display_summary(f)
-    link_to(f.name, franchise_path(f)) + " - #{f.average_rating} stars"
+    link_to(f.name + " - #{f.average_rating} stars", franchise_path(f))
   end
 end
