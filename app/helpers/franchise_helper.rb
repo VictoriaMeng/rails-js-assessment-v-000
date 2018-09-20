@@ -18,4 +18,8 @@ module FranchiseHelper
   def display_summary(f)
     link_to(f.name + " - #{f.average_rating} stars", franchise_path(f))
   end
+
+  def set_id(f)
+    "#{f.id}"
+  end
 end

@@ -2,10 +2,12 @@
 <p><%= render partial: "sort", locals: {url: '/sort'} %></p>
 <ol>
   <% @franchises.each do |f| %>
-    <li><%= display_summary(f) %></li>
+    <li id=<%=set_id(f)%>><%= display_summary(f) %></li>
   <% end %>
 </ol>
 
-<script id="test-template" type="text/x-handlebars-template">
-  <p>{{name}}<p>
+<script id="franchise-summary-template" type="text/x-handlebars-template">
+  <ul>
+    <li>Medium: {{medium}}</li>
+  </ul>
 </script>

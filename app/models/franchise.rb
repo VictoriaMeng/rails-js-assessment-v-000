@@ -1,6 +1,6 @@
 class Franchise < ActiveRecord::Base 
   has_many :ratings 
-  has_many :users, through: :franchises
+  has_many :users, through: :ratings
 
   validates :name, presence: true, uniqueness: true
   validates :medium, presence: true
