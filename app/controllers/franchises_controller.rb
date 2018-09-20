@@ -8,6 +8,7 @@ class FranchisesController < ApplicationController
   def show 
     @franchise = find
     @rating = current_user.rating_by_franchise(@franchise)  
+    render json: @franchise
   end
 
   def new 
