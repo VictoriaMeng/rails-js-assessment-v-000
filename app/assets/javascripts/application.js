@@ -13,5 +13,5 @@
 //= require rails-ujs
 //= require activestorage
 //= require jquery
-//= require handlebars
-//= require fandom
+//= require_tree .
+
