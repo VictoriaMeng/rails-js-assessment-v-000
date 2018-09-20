@@ -1,7 +1,12 @@
 $(document).ready(function() {
+  // renderIndex();
   compileFranchiseTemplate();
   addLinkListeners();
 });
+
+function renderIndex() {
+  alert("Rendered")
+}
 
 function compileFranchiseTemplate() {
   franchiseTemplate = Handlebars.compile($("#franchise-summary-template")[0].innerHTML);
@@ -12,9 +17,10 @@ function addLinkListeners() {
     this.addEventListener("click", function(event) {
       event.preventDefault();
       $.get(this, function(franchise) {
-        debugger;
-        franchiseTemplate(franchise);
-        $("li#" + franchise.id).append(franchiseTemplate(franchise));
+        if ($("#franchise-details-" + franchise.id).length === 0) {
+          franchiseTemplate(franchise);
+          $("li#" + franchise.id).append(franchiseTemplate(franchise));
+        };
       });
     })
   });

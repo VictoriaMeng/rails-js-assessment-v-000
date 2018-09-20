@@ -3,6 +3,7 @@ class FranchisesController < ApplicationController
 
   def index 
     @franchises = Franchise.sort_by_name
+    # render json: @franchises
   end
 
   def show 
