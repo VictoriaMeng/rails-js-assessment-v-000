@@ -3,13 +3,16 @@ class FranchisesController < ApplicationController
 
   def index 
     @franchises = Franchise.sort_by_name
-    # render json: @franchises
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @franchises }
+    end
   end
 
   def show 
     @franchise = find
     @rating = current_user.rating_by_franchise(@franchise)  
-    render json: @franchise
+    # render json: @franchise
   end
 
   def new 
