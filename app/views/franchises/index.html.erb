@@ -6,7 +6,7 @@
 <script id="franchise-index-template" type="text/x-handlebars-template">
   <ol>
   {{#each this}}
-    <li><a href="/franchises/{{id}}">{{name}}</li>
+    <li id="{{id}}"><a href="/franchises/{{id}}">{{name}}</a></li>
   {{/each}}
   </ol>
 </script>
