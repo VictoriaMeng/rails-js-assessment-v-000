@@ -10,9 +10,7 @@ class FranchisesController < ApplicationController
   end
 
   def show 
-    @franchise = find
-    @rating = current_user.rating_by_franchise(@franchise)  
-    # binding.pry
+    @franchise = find 
     render json: @franchise
   end
 

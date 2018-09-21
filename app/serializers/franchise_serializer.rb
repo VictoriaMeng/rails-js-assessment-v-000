@@ -3,11 +3,11 @@ class FranchiseSerializer < ActiveModel::Serializer
   has_many :ratings
 
   def average_rating
-    "#{object.average_rating}"
+    object.average_rating
   end
 
   def ratings_count
-    "#{object.count_ratings}"
+    object.count_ratings
   end
 
   def url
