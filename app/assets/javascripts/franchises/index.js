@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$("#franchise-index").ready(function() {
   compileIndexTemplate();
   compileShowTemplate();
   renderIndex();

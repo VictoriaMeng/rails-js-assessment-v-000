@@ -1,0 +1,6 @@
+$("#franchise-show").ready(function() {
+
+});
+
+
+

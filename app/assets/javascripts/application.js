@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require jquery
+//= require jquery-readyselector
 //= require_tree .
 //= require_tree ./franchises
 
