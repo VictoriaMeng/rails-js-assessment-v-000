@@ -14,4 +14,5 @@
 //= require activestorage
 //= require jquery
 //= require_tree .
+//= require_tree ./franchises
 
