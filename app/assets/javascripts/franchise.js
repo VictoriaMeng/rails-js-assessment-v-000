@@ -2,7 +2,6 @@ $(document).ready(function() {
   compileIndexTemplate();
   compileShowTemplate();
   renderIndex();
-  addLinkListeners(); 
 });
 
 function compileIndexTemplate() {
@@ -16,13 +15,12 @@ function compileShowTemplate() {
 function renderIndex() {
   $.getJSON("/franchises", function(franchises) {
     $("#franchise-index").append(indexTemplate(franchises));
+    addLinkListeners();
   });
-}
+};
 
 function addLinkListeners() {
-  debugger;
   $("ol li a").each(function() {
-    debugger;
     this.addEventListener("click", function(event) {
       event.preventDefault();
       $.get(this, function(franchise) {
