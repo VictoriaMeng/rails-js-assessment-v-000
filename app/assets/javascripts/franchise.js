@@ -23,7 +23,7 @@ function addLinkListeners() {
   $("ol li a").each(function() {
     this.addEventListener("click", function(event) {
       event.preventDefault();
-      $.get(this, function(franchise) {
+      $.getJSON(this, function(franchise) {
         if ($("#franchise-details-" + franchise.id).length === 0) {
           $("li#" + franchise.id).append(showTemplate(franchise));
         };

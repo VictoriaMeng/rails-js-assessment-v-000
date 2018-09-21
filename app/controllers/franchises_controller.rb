@@ -11,7 +11,10 @@ class FranchisesController < ApplicationController
 
   def show 
     @franchise = find 
-    render json: @franchise
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @franchise }
+    end
   end
 
   def new 
