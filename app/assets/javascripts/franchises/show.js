@@ -1,9 +1,16 @@
 $("#franchise-show").ready(function() {
-  compileShowIndex();
+  compileShowTemplate();
+  renderFranchise();
 });
 
-function compileShowIndex() {
-  showTemplate = Handlebars.compile($("#franchise-show")[0].innerHTML);
+function compileShowTemplate() {
+  showTemplate = Handlebars.compile($("#franchise-show-template")[0].innerHTML);
+};
+
+function renderFranchise() {
+  $.getJSON(window.location.href, function(franchise) {
+    $("#franchise-show").prepend(showTemplate(franchise));
+  });
 };
 
 
