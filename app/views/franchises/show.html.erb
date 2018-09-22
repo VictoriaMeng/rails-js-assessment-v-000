@@ -1,10 +1,15 @@
 <div id="franchise-show">
-<h2><%= @franchise.name %></h2>
-  <p>Medium: <%= @franchise.medium %></p>
-  <p>Rating: <%= display_ratings %></p> 
-  <p><%= display_user_rating %></p>
   <p><%= display_rating_link %></p>
 </div>
 
-<script id="franchise-show-template">
+<script id="franchise-show-template" type="text/x-handlebars-template">
+  <h2>{{name}}</h2>
+  <p>Medium: {{medium}}</p>
+  <p>Total Number of Ratings: {{ratings_count}}</p>
+  <p>Average Rating: {{average_rating}}</p>
+  {{#if your_rating}}
+  <p>Your Rating: {{your_rating}}</p>
+  {{else}}
+  <p>Your Rating: None </p>
+  {{/if}}
 </script>

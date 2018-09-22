@@ -1,13 +1,8 @@
 $("#franchise-index").ready(function() {
   compileIndexTemplate();
   compileDetailsTemplate();
-  renderHeading();
   renderIndex();
 });
-
-function renderHeading() {
-  $("#franchise-index")[0].innerHTML += "<h2>Franchises</h2>"
-}
 
 function compileIndexTemplate() {
   indexTemplate = Handlebars.compile($("#franchise-index-template")[0].innerHTML);
