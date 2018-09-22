@@ -1,6 +1,6 @@
 $("#franchise-index").ready(function() {
   compileIndexTemplate();
-  compileShowTemplate();
+  compileDetailsTemplate();
   renderHeading();
   renderIndex();
 });
@@ -13,8 +13,8 @@ function compileIndexTemplate() {
   indexTemplate = Handlebars.compile($("#franchise-index-template")[0].innerHTML);
 };
 
-function compileShowTemplate() {
-  showTemplate = Handlebars.compile($("#franchise-show-template")[0].innerHTML);
+function compileDetailsTemplate() {
+  detailsTemplate = Handlebars.compile($("#franchise-details-template")[0].innerHTML);
 };
 
 function renderIndex() {
@@ -30,7 +30,7 @@ function addLinkListeners() {
       event.preventDefault();
       $.getJSON(this, function(franchise) {
         if ($("#franchise-details-" + franchise.id).length === 0) {
-          $("li#" + franchise.id).append(showTemplate(franchise));
+          $("li#" + franchise.id).append(detailsTemplate(franchise));
         };
       });
     });
