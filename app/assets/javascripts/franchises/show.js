@@ -13,5 +13,12 @@ function renderFranchise() {
   });
 };
 
+function showPrevious() {
+  alert("Previous!");
+};
+
+function showNext() {
+  alert("Next!")
+};
 
 

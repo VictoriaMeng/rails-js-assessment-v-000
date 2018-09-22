@@ -3,9 +3,9 @@
 </div>
 
 <script id="franchise-show-template" type="text/x-handlebars-template">
-  <button id="previous">See Previous Franchise</button>
+  <button id="previous" class="show" onclick="showPrevious();">See Previous Franchise</button>
   <h2>{{name}}</h2>
-  <button id="next">See Next Franchise</button>
+  <button id="next" class="show" onclick="showNext();">See Next Franchise</button>
   <p value={{id}}>Franchise ID: {{id}}</p>
   <p>Medium: {{medium}}</p>
   <p>Total Number of Ratings: {{ratings_count}}</p>
