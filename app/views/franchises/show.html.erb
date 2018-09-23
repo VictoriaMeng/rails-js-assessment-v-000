@@ -1,5 +1,4 @@
 <div id="franchise-show" style="text-align:center;">
-
 </div>
 
 <script id="franchise-show-template" type="text/x-handlebars-template">
@@ -11,8 +10,8 @@
   <p>Total Number of Ratings: {{ratings_count}}</p>
   <p>Average Rating: {{average_rating}}</p>
   {{#if your_rating}}
-  <p>Your Rating: {{your_rating.stars}}</p>
+  <p><a href="#">Your Rating: {{your_rating.stars}} - Change Your Rating!</a></p>
   {{else}}
-  <p>Your Rating: None </p>
+  <p><a href="#">Your Rating: None - Give Your Rating!></a></p>
   {{/if}}
 </script>
