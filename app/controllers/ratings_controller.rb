@@ -6,10 +6,13 @@ class RatingsController < ApplicationController
   end 
 
   def create 
-    @rating = Rating.new(ratings_params)
+    @rating = Rating.new(stars: params[:rating][:stars], franchise_id: params[:franchise_id], user_id: session[:user_id])
     if @rating.valid?
       @rating.save 
-      redirect_to franchise_path(@rating.franchise)
+      respond_to do |format|
+        format.html { render :show }
+        format.json { render json: @rating, status: 201 }
+      end
     else 
       redirect_to new_franchise_rating_path(@rating.franchise)
     end
@@ -25,7 +28,10 @@ class RatingsController < ApplicationController
     find_rating
     @rating.stars = params[:rating][:stars]
     @rating.save if @rating.valid?
-    redirect_to franchise_path(@franchise)
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @rating, status: 200 }
+    end
   end
 
   def index  
