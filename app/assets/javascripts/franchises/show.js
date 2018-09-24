@@ -42,10 +42,7 @@ function addFormListener() {
     const params = $(this).serialize();
     const franchise_id = $("p#franchise-id").attr("value");
     if ($("#rating-id").length == 0) {
-      $.post("/franchises/" + franchise_id + "/ratings/", params, function(data) {
-        debugger;
-        renderNewRating(data);
-      });
+      var posting = $.post("/franchises/" + franchise_id + "/ratings/", params)
     } else {
       const rating_id = $("p#rating-id").attr("value")
       var posting = $.ajax({
@@ -54,10 +51,10 @@ function addFormListener() {
         dataType: "json",
         data: params
       });
-      posting.done(function(data) {
-        renderNewRating(data);
-      });
     };
+    posting.done(function(data) {
+      renderNewRating(data);
+    });
   });
 }
 

@@ -9,10 +9,7 @@ class RatingsController < ApplicationController
     @rating = Rating.new(stars: params[:rating][:stars], franchise_id: params[:franchise_id], user_id: session[:user_id])
     if @rating.valid?
       @rating.save 
-      respond_to do |format|
-        format.html { render :show }
-        format.json { render json: @rating, status: 201 }
-      end
+      render json: @rating
     else 
       redirect_to new_franchise_rating_path(@rating.franchise)
     end
