@@ -14,6 +14,7 @@
 //= require activestorage
 //= require jquery
 //= require jquery-readyselector
+//= require bootstrap-sprockets
 //= require_tree .
 //= require_tree ./franchises
 
