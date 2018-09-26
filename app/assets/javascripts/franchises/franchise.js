@@ -5,10 +5,10 @@ class Franchise {
   };
 
   ratings_count_text() {
-    return "Total Number of Ratings: ${ratings_count}"
+    return `Total Number of Ratings: ${this.ratings_count}`
   };
 
   average_rating_text() {
-    return "Average Rating: ${average_rating}"
+    return `Average Rating: ${this.average_rating}`
   };
 }
