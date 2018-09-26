@@ -25,8 +25,12 @@ module ApplicationHelper
   end
 
   def display_errors(my_obj)
-    # binding.pry
-    my_obj.errors.full_messages if my_obj && my_obj.errors.any?
+    message = ""
+    if my_obj && my_obj.errors.any?
+      message = "Error: "
+      my_obj.errors.full_messages.each { |e| message << e}
+    end
+    message
   end
 
   def display_flash_errors
