@@ -36,6 +36,11 @@ class RatingsController < ApplicationController
     @ratings = @franchise.ratings
   end
 
+  def show 
+    find_rating
+    render json: @rating
+  end
+
   private 
 
   def ratings_params 

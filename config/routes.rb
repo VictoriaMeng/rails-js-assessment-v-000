@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/users/sort', to: 'users#sort'
   resources :users
   resources :franchises do
-    resources :ratings, only: [:new, :edit, :create, :update, :index]
+    resources :ratings, only: [:new, :edit, :create, :update, :index, :show]
   end
   get '/sort', to: 'franchises#sort'
   get '/auth/facebook/callback' => 'sessions#fb_create'
