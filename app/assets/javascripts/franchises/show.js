@@ -60,12 +60,11 @@ function addFormListener() {
 
 function renderNewRating(data) {
   const franchise = new Franchise(data["franchise"]);
-  debugger;
   $("p#empty-rating").attr("value", data["id"]);
   $("p#empty-rating").attr("id", "rating-id");
   $("p#rating-id")[0].innerHTML = "Your Rating: " + data["stars"];
-  $("p#ratings-count")[0].innerHTML  = "Total Number of Ratings: " + data["franchise"]["ratings_count"]
-  $("p#average-rating")[0].innerHTML = "Average Rating: " + data["franchise"]["average_rating"]
+  $("p#ratings-count")[0].innerHTML  = franchise.ratings_count_text()
+  $("p#average-rating")[0].innerHTML = franchise.average_rating_text()
 }
 
 
