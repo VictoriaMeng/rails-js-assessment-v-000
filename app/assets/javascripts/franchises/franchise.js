@@ -1,7 +1,7 @@
 class Franchise {
-  constructor(ratings_count, average_rating) {
-    this.ratings_count = ratings_count;
-    this.average_rating = average_rating;
+  constructor(franchise) {
+    this.ratings_count = franchise["ratings_count"];
+    this.average_rating = franchise["average_rating"];
   };
 
   ratings_count_text() {

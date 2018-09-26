@@ -59,6 +59,8 @@ function addFormListener() {
 }
 
 function renderNewRating(data) {
+  const franchise = new Franchise(data["franchise"]);
+  debugger;
   $("p#empty-rating").attr("value", data["id"]);
   $("p#empty-rating").attr("id", "rating-id");
   $("p#rating-id")[0].innerHTML = "Your Rating: " + data["stars"];
