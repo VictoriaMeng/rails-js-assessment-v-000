@@ -14,7 +14,9 @@ function compileShowTemplate() {
 };
 
 function renderFranchise(href) {
-  $.getJSON(href, function(franchise) {
+  const get = $.getJSON(href);
+  get.success(function(franchise) {
+    clearFranchise();
     $("#franchise-show").prepend(showTemplate(franchise));
     addFormListener();
   });
@@ -22,13 +24,11 @@ function renderFranchise(href) {
 
 function showPrevious() {
   const previousId = parseInt($("p").attr("value")) - 1;
-  clearFranchise();
   renderFranchise("/franchises/" + previousId);
 };
 
 function showNext() {
   const nextId = parseInt($("p").attr("value")) + 1;
-  clearFranchise();
   renderFranchise("/franchises/" + nextId);
 };
 
