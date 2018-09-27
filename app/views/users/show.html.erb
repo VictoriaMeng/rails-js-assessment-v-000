@@ -1,5 +1,5 @@
-<h2>Hello, <%= @user.name %>!</h2>
-<h3>Your Ratings:</h3>
+<h2 class="mt-5">Hello, <%= @user.name %>!</h2>
+<h3 class="mt-5">Your Ratings:</h3>
 <p><%= render partial: "franchises/sort", locals: {url: "/users/sort" } %></p>
 <ol>
 <% @ratings.each do |rating| %>
