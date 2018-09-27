@@ -9,14 +9,36 @@
   <meta name="author" content="VictoriaMeng">
     <%= javascript_include_tag 'application' %>
     <title>RateYourFav</title>
-    <h1>Rate Your Fav</h1>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <% if logged_in? %>
-        <%= display_user_page_link %>
-        <%= display_franchise_index_link %>
-        <%= display_new_franchise_link %>
-        <%= display_logout_link %>
+    <div class="container">
+      <p class="navbar-brand">Rate Your Fav</p>
+      <% if logged_in? %>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="<%= user_path(current_user) %>">Your Page</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="<%= franchises_path %>">Rate More Franchises</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= new_franchise_path %>">Add More Franchises</a
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= logout_path %>">Logout</a>
+        </li>
+      </ul>
+    </div>
       <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
     </nav>
   </head>
 
