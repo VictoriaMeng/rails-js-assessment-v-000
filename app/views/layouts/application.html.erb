@@ -11,12 +11,12 @@
     <title>RateYourFav</title>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <p class="navbar-brand">Rate Your Fav</p>
+      <a class="navbar-brand" href="<%= franchises_path %>">Rate Your Fav</a>
       <% if logged_in? %>
       <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home
+          <a class="nav-link" href="<%= franchises_path %>">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
@@ -49,6 +49,12 @@
     <%= display_errors(@rating) %>
     <%= display_flash_errors %>
     <br>
-    <%= yield %>
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-12 text-center">
+      <%= yield %>
+    </div>
+    </div>
+    </div>
   </body>
 </html>
