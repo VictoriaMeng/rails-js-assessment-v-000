@@ -29,10 +29,14 @@ function addLinkListeners() {
       event.preventDefault();
       $.getJSON(this, function(franchise) {
         if ($("#franchise-details-" + franchise.id).length === 0) {
-          $("li#" + franchise.id).append(detailsTemplate(franchise));
+          appendDetails(franchise);
         };
       });
     });
   });
 };
+
+function appendDetails(franchise) {
+  $("li#" + franchise.id).append(detailsTemplate(franchise));
+}
 
