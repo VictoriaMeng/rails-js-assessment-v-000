@@ -9,11 +9,12 @@
   <p id="franchise-id" value={{id}}>Franchise ID: {{id}}</p>
   <p id=>Medium: {{medium}}</p>
   <p id="ratings-count">Total Number of Ratings: {{ratings_count}}</p>
-  <p id="average-rating">Average Rating: {{average_rating}}</p>
   {{#if your_rating}}
+    <p id="average-rating">Average Rating: {{average_rating}}</p>
     <p id="rating-id" value={{your_rating.id}}>Your Rating: {{your_rating.stars}}</p>
     {{> rating-form your_rating}}
     {{else}}
+    <p id="average-rating">Average Rating: None</p>
     <p id="empty-rating">Your Rating: None</a></p>
     {{> rating-form your_rating franchise_id=id}}
   {{/if}}
