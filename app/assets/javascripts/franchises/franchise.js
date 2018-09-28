@@ -1,9 +1,10 @@
 class Franchise {
   constructor(franchise) {
-    this.id = id;
-    this.name = name;
-    this.medium = medium;
-    this.url = url;
+    this.id = franchise["id"];
+    this.name = franchise["name"];
+    this.medium = franchise["medium"];
+    this.url = franchise["url"];
+    this.your_rating = new Rating(franchise["your_rating"])
     this.ratings_count = franchise["ratings_count"];
     this.average_rating = franchise["average_rating"];
   };
