@@ -45,7 +45,7 @@ function addFormListener() {
     event.preventDefault();
     const params = $(this).serialize();
     const franchise_id = $("p#franchise-id").attr("value");
-    if ($("#rating-id").length == 0) {
+    if (noRatingId()) {
       var posting = $.post("/franchises/" + franchise_id + "/ratings/", params)
     } else {
       const rating_id = $("p#rating-id").attr("value")
@@ -60,6 +60,10 @@ function addFormListener() {
       renderNewRating(data);
     });
   });
+}
+
+function noRatingId() {
+  return $("#rating-id").length == 0;
 }
 
 function renderNewRating(data) {
