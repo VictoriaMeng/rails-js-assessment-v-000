@@ -18,10 +18,16 @@ function renderFranchise(href) {
   get.success(function(franchise) {
     clearFranchise();
     prependFranchise(franchise);
-    $("#rating_stars_" + franchise.your_rating.stars).attr('checked', 'checked');
+    addRatingCheckmark(franchise);
     addFormListener();
   });
 };
+
+function addRatingCheckmark(franchise) {
+  if (franchise.your_rating) {
+    $("#rating_stars_" + franchise.your_rating.stars).attr('checked', 'checked');
+  };
+}
 
 function prependFranchise(franchise) {
   $("#franchise-show").prepend(showTemplate(franchise));
