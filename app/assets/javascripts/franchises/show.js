@@ -76,9 +76,10 @@ function noRatingId() {
 
 function renderNewRating(data) {
   const franchise = new Franchise(data["franchise"]);
-  addRatingIdValue(franchise.your_rating);
+  const rating = new Rating(data)
+  addRatingIdValue(rating);
   replaceEmptyRating();
-  renderStars(franchise.your_rating);
+  renderStars(rating);
   renderRatingsCount(franchise);
   renderAverageRating(franchise);
 };
