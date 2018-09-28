@@ -13,7 +13,8 @@ function compileDetailsTemplate() {
 };
 
 function renderIndex() {
-  $.getJSON("/franchises", function(franchises) {
+  $.getJSON("/franchises", function(data) {
+    const franchises = data.map(f => new Franchise(f))
     appendIndex(franchises);
     addLinkListeners();
   });
