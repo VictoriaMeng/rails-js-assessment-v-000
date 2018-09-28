@@ -28,7 +28,7 @@ function addLinkListeners() {
     this.addEventListener("click", function(event) {
       event.preventDefault();
       $.getJSON(this, function(franchise) {
-        if ($("#franchise-details-" + franchise.id).length === 0) {
+        if (detailsNotAppended(franchise.id)) {
           appendDetails(franchise);
         };
       });
@@ -38,5 +38,9 @@ function addLinkListeners() {
 
 function appendDetails(franchise) {
   $("li#" + franchise.id).append(detailsTemplate(franchise));
+}
+
+function detailsNotAppended(id) {
+  return $("#franchise-details-" + id).length === 0;
 }
 
