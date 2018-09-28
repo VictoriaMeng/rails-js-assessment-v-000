@@ -8,6 +8,7 @@
     <h1 class="mt-5 col">{{name}}</h1>
     <button id="next" class="show btn col-3" onclick="showNext();">See Next Franchise</button>
   </div>
+  <br>
   <p id="franchise-id" value={{id}}>Franchise ID: {{id}}</p>
   <p id=>Medium: {{medium}}</p>
   <p id="ratings-count">Total Number of Ratings: {{ratings_count}}</p>
@@ -23,6 +24,7 @@
 </script>
 
 <script id="rating-form-template" type="text/x-handlebars-template">
+  <br>
   <form accept-charset="UTF-8">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
   <input name="utf8" value="✓" type="hidden">
