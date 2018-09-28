@@ -14,10 +14,14 @@ function compileDetailsTemplate() {
 
 function renderIndex() {
   $.getJSON("/franchises", function(franchises) {
-    $("#franchise-index").append(indexTemplate(franchises));
+    appendIndex(franchises);
     addLinkListeners();
   });
 };
+
+function appendIndex(franchises) {
+  $("#franchise-index").append(indexTemplate(franchises));
+}
 
 function addLinkListeners() {
   $("ol li a").each(function() {
