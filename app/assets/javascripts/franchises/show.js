@@ -17,10 +17,14 @@ function renderFranchise(href) {
   const get = $.getJSON(href);
   get.success(function(franchise) {
     clearFranchise();
-    $("#franchise-show").prepend(showTemplate(franchise));
+    prependFranchise(franchise); 
     addFormListener();
   });
 };
+
+function prependFranchise(franchise) {
+  $("#franchise-show").prepend(showTemplate(franchise));
+}
 
 function showPrevious() {
   const previousId = parseInt($("p").attr("value")) - 1;
