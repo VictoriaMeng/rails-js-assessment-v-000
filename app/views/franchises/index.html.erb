@@ -15,8 +15,13 @@
   <ul id=franchise-details-{{id}} class="list-unstyled">
     <br>  
     <li>Medium: {{medium}}</li>
-    <li>Total Number of Ratings: {{ratings_count}}</li>
-    <li>Average Rating: {{average_rating}}</li>
+    {{#if average_rating}}
+      <li>Total Number of Ratings: {{ratings_count}}</li>
+      <li>Average Rating: {{average_rating}}</li>
+    {{else}}
+      <li>Total Number of Ratings: 0</li>
+      <li>Average Rating: None</li>
+    {{/if}}
     <br>
     <li><a href={{url}}>More Details</a></li>
   </ul>
