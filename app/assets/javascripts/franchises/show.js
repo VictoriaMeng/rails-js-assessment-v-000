@@ -64,11 +64,30 @@ function addFormListener() {
 
 function renderNewRating(data) {
   const franchise = new Franchise(data["franchise"]);
+  addRatingIdValue(data);
+  replaceEmptyRating();
+  renderStars(data);
+  renderRatingsCount(franchise);
+  renderAverageRating(franchise);
+};
+
+function addRatingIdValue(data) {
   $("p#empty-rating").attr("value", data["id"]);
+};
+
+function replaceEmptyRating() {
   $("p#empty-rating").attr("id", "rating-id");
-  $("p#rating-id")[0].innerHTML = "Your Rating: " + data["stars"];
-  $("p#ratings-count")[0].innerHTML  = franchise.ratings_count_text()
-  $("p#average-rating")[0].innerHTML = franchise.average_rating_text()
 }
 
+function renderStars(data) {
+  $("p#rating-id")[0].innerHTML = "Your Rating: " + data["stars"];
+}
+
+function renderRatingsCount(franchise) {
+  $("p#ratings-count")[0].innerHTML  = franchise.ratings_count_text();
+};
+
+function renderAverageRating(franchise) {
+  $("p#average-rating")[0].innerHTML = franchise.average_rating_text();
+};
 
