@@ -17,7 +17,8 @@ function renderFranchise(href) {
   const get = $.getJSON(href);
   get.success(function(franchise) {
     clearFranchise();
-    prependFranchise(franchise); 
+    prependFranchise(franchise);
+    $("#rating_stars_" + franchise.your_rating.stars).attr('checked', 'checked');
     addFormListener();
   });
 };
