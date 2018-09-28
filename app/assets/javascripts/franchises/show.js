@@ -15,7 +15,8 @@ function compileShowTemplate() {
 
 function renderFranchise(href) {
   const get = $.getJSON(href);
-  get.success(function(franchise) {
+  get.success(function(data) {
+    const franchise = new Franchise(data);
     clearFranchise();
     prependFranchise(franchise);
     addRatingCheckmark(franchise);

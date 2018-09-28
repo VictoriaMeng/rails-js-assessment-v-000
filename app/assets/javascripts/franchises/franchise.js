@@ -4,9 +4,11 @@ class Franchise {
     this.name = franchise["name"];
     this.medium = franchise["medium"];
     this.url = franchise["url"];
-    this.your_rating = new Rating(franchise["your_rating"])
-    this.ratings_count = franchise["ratings_count"];
-    this.average_rating = franchise["average_rating"];
+    if (franchise["your_rating"]) {
+      this.your_rating = new Rating(franchise["your_rating"]);
+      this.ratings_count = franchise["ratings_count"];
+      this.average_rating = franchise["average_rating"];
+    };
   };
 
   ratings_count_text() {

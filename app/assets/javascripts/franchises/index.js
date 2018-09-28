@@ -28,7 +28,8 @@ function addLinkListeners() {
   $("ol li a").each(function() {
     this.addEventListener("click", function(event) {
       event.preventDefault();
-      $.getJSON(this, function(franchise) {
+      $.getJSON(this, function(data) {
+        const franchise = new Franchise(data);
         if (detailsNotAppended(franchise.id)) {
           appendDetails(franchise);
         };
