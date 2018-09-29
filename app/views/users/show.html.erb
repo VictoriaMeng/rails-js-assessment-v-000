@@ -2,6 +2,7 @@
 <h3 class="mt-5">Your Ratings:</h3>
 <p><%= render partial: "franchises/sort", locals: {url: "/users/sort" } %></p>
 <ol>
+<br>
 <% @ratings.each do |rating| %>
   <li><%= display_listed_rating(rating) %></li>
 <% end %>
