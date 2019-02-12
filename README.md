@@ -6,7 +6,7 @@ Users can create accounts either manually or through Facebook authentication and
 
 This is the Rails and Javascript version of RateMyFav.
 
-Blog post about this app's development [here](https://victoriameng.github.io/rails_portfolio_project_ratemyfav_aka_dont_rely_too_much_on_helpers).
+Blog post about this app's development [here](https://victoriameng.github.io/rails_and_javascript_portfolio_project_-_ratemyfav_2_0).
 
 ## Installation
 
